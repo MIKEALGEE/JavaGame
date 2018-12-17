@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="da367f2d-cf98-4e15-9d44-292409ede737" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/entity/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/entity/Entity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/entity/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/entity/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/graphics/Animation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/graphics/Animation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/graphics/Sprite.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/graphics/Sprite.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/states/PlayState.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projectJavaGame/DaGame/states/PlayState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/entity/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/entity/Entity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/entity/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/graphics/Animation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/graphics/Animation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/graphics/Sprite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/graphics/Sprite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/states/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/states/PlayState.java" afterDir="false" />
-    </list>
+    <list default="true" id="da367f2d-cf98-4e15-9d44-292409ede737" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,12 +27,12 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="86" />
-          <entry key="png" value="6" />
+          <entry key="png" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Image" value="6" />
+          <entry key="Image" value="7" />
           <entry key="JAVA" value="86" />
         </counts>
       </usages-collector>
@@ -63,7 +50,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaGame/states/PlayState.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="80">
@@ -75,10 +62,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
+            <state relative-caret-position="-1201">
               <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -90,10 +77,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaGame/graphics/Animation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="613">
-              <caret line="54" column="118" selection-start-line="54" selection-start-column="118" selection-end-line="54" selection-end-column="118" />
+            <state relative-caret-position="-225">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/entity/MainCharJava.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -132,18 +124,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1029">
               <caret line="49" selection-start-line="49" selection-end-line="49" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaGame/states/MenuState.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -219,7 +199,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="13" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
@@ -297,7 +277,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545038818466" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545039729610" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -355,9 +335,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="13" y="23" width="1440" height="806" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25679544" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -367,7 +346,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.14040114" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.14040114" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -639,23 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaGame/graphics/Animation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="613">
-          <caret line="54" column="118" selection-start-line="54" selection-start-column="118" selection-end-line="54" selection-end-column="118" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1396">
@@ -675,6 +637,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="80">
           <caret line="19" column="94" selection-start-line="19" selection-start-column="94" selection-end-line="19" selection-end-column="94" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaGame/graphics/Animation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/entity/MainCharJava.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1201">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
