@@ -10,62 +10,63 @@ import java.awt.*;
 public class Player extends  Entity{
     public Player(Sprite sprite, Vector2f origin, int size) {
         super(sprite, origin, size);
+        acc =3f;
+        maxSpeed =4f;
     }
 
-    public void move(){
-        if (up) {
+    private void move() {
+        if(up) {
             dy -= acc;
-            if(dy < -maxSpeed){
+            if(dy < -maxSpeed) {
                 dy = -maxSpeed;
             }
         } else {
-            if(dy < 0){
+            if(dy < 0) {
                 dy += deacc;
-                if(dy > 0){
+                if(dy > 0) {
                     dy = 0;
                 }
             }
         }
-        if (down) {
+        if(down) {
             dy += acc;
-            if(dy < maxSpeed){
+            if(dy > maxSpeed) {
                 dy = maxSpeed;
             }
         } else {
-            if(dy > 0){
+            if(dy > 0) {
                 dy -= deacc;
-                if(dy < 0){
+                if(dy < 0) {
                     dy = 0;
                 }
             }
         }
-        if (left) {
+        if(left) {
             dx -= acc;
-            if(dx < -maxSpeed){
+            if(dx < -maxSpeed) {
                 dx = -maxSpeed;
             }
         } else {
-            if(dx < 0){
+            if(dx < 0) {
                 dx += deacc;
-                if(dx > 0){
+                if(dx > 0) {
                     dx = 0;
                 }
             }
         }
-        if (right) {
+        if(right) {
             dx += acc;
-            if(dx > maxSpeed){
+            if(dx > maxSpeed) {
                 dx = maxSpeed;
             }
         } else {
-            if(dx > 0){
+            if(dx > 0) {
                 dx -= deacc;
-                if(dx < 0){
+                if(dx < 0) {
                     dx = 0;
                 }
             }
         }
-
     }
 
     public void update(){
@@ -89,7 +90,7 @@ public class Player extends  Entity{
 
         if (key.up.down) {
             up = true;
-            System.out.println("true");
+            System.out.println(acc+"  "+deacc);
         }else {
             up = false;
         }

@@ -52,6 +52,7 @@ public class Animation {
 
         if(count == delay){
             currentFrame++;
+            count =0; // when I added this the sprite sheet worked properly. Before it was getting stuck on one frame.
         }
         if (currentFrame == numFrames){
             currentFrame = 0;

@@ -17,7 +17,8 @@ public class PlayState extends GameState {
     public PlayState(GameStateManager gsm){
         super(gsm);
         font = new Font("font/ZeldaFont.png", 16,16);
-        player = new Player(new Sprite("entity/linkformatted.png"), new Vector2f(300,300), 128);
+        player = new Player(new Sprite("entity/MainCharJava.png"), new Vector2f(300, 300), 120);
+//        player = new Player(new Sprite("entity/professor_walk_cycle_no_hat.png", 64, 64), new Vector2f(300, 300), 128);
     }
 
     public void update(){

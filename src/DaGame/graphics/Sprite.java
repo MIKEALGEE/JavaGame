@@ -1,9 +1,8 @@
 package DaGame.graphics;
 
 import DaGame.util.Vector2f;
-
+import java.awt.Graphics2D;
 import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
@@ -15,6 +14,8 @@ public class Sprite {
     public int h;
     public int wSprite;
     public int hSprite;
+
+    public static Font currentFont;
 
     public Sprite(String file) {
         w =TILE_SIZE;
@@ -129,7 +130,6 @@ public class Sprite {
             x += xOffset;
             y += yOffset;
         }
-
 
 
     }
