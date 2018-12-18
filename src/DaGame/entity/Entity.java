@@ -2,10 +2,7 @@ package DaGame.entity;
 
 import DaGame.graphics.Animation;
 import DaGame.graphics.Sprite;
-import DaGame.util.AABB;
-import DaGame.util.KeyHandler;
-import DaGame.util.MouseHandler;
-import DaGame.util.Vector2f;
+import DaGame.util.*;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -46,6 +43,8 @@ public abstract class Entity {
     protected AABB hitBounds;
     protected AABB bounds;
 
+    protected TileCollision tc;
+
 
 
     public Entity(Sprite sprite, Vector2f origin, int size){
@@ -58,6 +57,8 @@ public abstract class Entity {
         hitBounds.setXOffset(size / 2);
         ani = new Animation();
         setAnimation(RIGHT,sprite.getSpriteArray(RIGHT), 10);
+
+        tc = new TileCollision(this);
     }
 
     public void setAnimation(int i, BufferedImage[] frames,int delay){
@@ -70,6 +71,8 @@ public abstract class Entity {
         this.sprite = sprite;
     }
 
+
+    public void setFallen(boolean b){ interact = b;}
 
     public void setSize(int i){
         size = i; }

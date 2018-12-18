@@ -15,14 +15,11 @@ public class HoleBlock extends Block {
         }
 
         public boolean update(AABB p) {
-            if(isInside(p)) {
                 System.out.println("I am a hole");
-
-            }
             return false;
         }
 
-        private boolean isInside(AABB p){
+        public boolean isInside(AABB p){
 
             if (p.getPos().x + p.getXOffset() < pos.x)  return false;
             if (p.getPos().y + p.getYOffset() < pos.y)  return false;
