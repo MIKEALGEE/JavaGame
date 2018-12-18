@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="da367f2d-cf98-4e15-9d44-292409ede737" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/DaGame/states/PlayState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/states/PlayState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/tiles/TileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/tiles/TileManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/tiles/TileMapNorm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/tiles/TileMapNorm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DaGame/tiles/TileMapObj.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/tiles/TileMapObj.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaGame/entity/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/entity/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DaGame/util/AABB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DaGame/util/AABB.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +32,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="117" />
+          <entry key="java" value="118" />
           <entry key="png" value="12" />
           <entry key="tmx" value="2" />
           <entry key="xml" value="5" />
@@ -43,20 +41,20 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Image" value="12" />
-          <entry key="JAVA" value="117" />
+          <entry key="JAVA" value="118" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="XML" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="5392" />
+          <entry key="java" value="6072" />
           <entry key="xml" value="198" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5392" />
+          <entry key="JAVA" value="6072" />
           <entry key="XML" value="198" />
         </counts>
       </usages-collector>
@@ -64,11 +62,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaGame/states/PlayState.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="361">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/DaGame/util/AABB.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="385">
+              <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -125,24 +135,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/DaGame/tiles/blocks/NormBlock.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#229#230#0" expanded="true" />
-                <element signature="e#277#278#0" expanded="true" />
-                <element signature="e#298#299#0" expanded="true" />
-                <element signature="e#396#397#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/DaGame/tiles/blocks/ObjBlock.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="168">
@@ -174,11 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
+            <state relative-caret-position="336">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -217,6 +209,8 @@
       <find>2f</find>
       <find>lay</find>
       <find>cam</find>
+      <find>flaot</find>
+      <find>fla</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,7 +229,6 @@
         <option value="$PROJECT_DIR$/src/DaGame/states/GameState.java" />
         <option value="$PROJECT_DIR$/src/DaGame/states/MenuState.java" />
         <option value="$PROJECT_DIR$/src/DaGame/states/PauseState.java" />
-        <option value="$PROJECT_DIR$/src/DaGame/util/AABB.java" />
         <option value="$PROJECT_DIR$/src/DaGame/states/GameStateManager.java" />
         <option value="$PROJECT_DIR$/src/DaGame/graphics/Animation.java" />
         <option value="$PROJECT_DIR$/src/DaGame/graphics/Sprite.java" />
@@ -249,12 +242,13 @@
         <option value="$PROJECT_DIR$/src/DaGame/tiles/blocks/Block.java" />
         <option value="$PROJECT_DIR$/src/DaGame/tiles/blocks/NormBlock.java" />
         <option value="$PROJECT_DIR$/src/DaGame/tiles/blocks/ObjBlock.java" />
-        <option value="$PROJECT_DIR$/src/DaGame/entity/Player.java" />
         <option value="$PROJECT_DIR$/src/DaGame/tiles/blocks/HoleBlock.java" />
         <option value="$PROJECT_DIR$/src/DaGame/tiles/TileManager.java" />
         <option value="$PROJECT_DIR$/src/DaGame/tiles/TileMapNorm.java" />
         <option value="$PROJECT_DIR$/src/DaGame/tiles/TileMapObj.java" />
         <option value="$PROJECT_DIR$/src/DaGame/states/PlayState.java" />
+        <option value="$PROJECT_DIR$/src/DaGame/util/AABB.java" />
+        <option value="$PROJECT_DIR$/src/DaGame/entity/Player.java" />
       </list>
     </option>
   </component>
@@ -318,6 +312,13 @@
               <item name="projectJavaGame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="DaGame" type="462c0819:PsiDirectoryNode" />
+              <item name="graphics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projectJavaGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projectJavaGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaGame" type="462c0819:PsiDirectoryNode" />
               <item name="states" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -335,6 +336,13 @@
               <item name="tiles" type="462c0819:PsiDirectoryNode" />
               <item name="blocks" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="projectJavaGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projectJavaGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DaGame" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -343,7 +351,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545099355345" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545101995749" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -532,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaGame/util/AABB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home/src.zip!/java/lang/Thread.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1450">
@@ -709,16 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="92" lean-forward="true" selection-start-line="92" selection-end-line="92" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DaGame/tiles/blocks/HoleBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="588">
@@ -799,8 +790,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/DaGame/states/PlayState.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="361">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaGame/util/AABB.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="100" column="9" lean-forward="true" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DaGame/entity/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
