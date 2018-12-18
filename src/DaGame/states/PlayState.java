@@ -21,7 +21,9 @@ public class PlayState extends GameState {
 
     public PlayState(GameStateManager gsm){
         super(gsm);
-        map = new Vector2f(map.x,map.y);
+        map = new Vector2f();
+        Vector2f.setWorldVar(map.x,map.y);
+
 
         tm = new TileManager("tile/tilemap.xml");
         font = new Font("font/ZeldaFont.png", 16,16);
