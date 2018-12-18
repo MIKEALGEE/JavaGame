@@ -31,6 +31,7 @@ public abstract class Entity {
     protected boolean left;
     protected boolean attack;
     protected boolean fallen;
+    protected boolean interact;
     protected int attackSpeed;
     protected int attackDuration;
 
@@ -68,6 +69,7 @@ public abstract class Entity {
     public void setSprite(Sprite sprite){
         this.sprite = sprite;
     }
+
 
     public void setSize(int i){
         size = i; }

@@ -98,12 +98,10 @@ public class Player extends  Entity{
     public void input(MouseHandler mouse, KeyHandler key) {
 
         if(mouse.getButton() == 1){
-            System.out.println("Player:" + pos.x +", " + pos.y);
         }
 
         if (key.up.down) {
             up = true;
-            System.out.println(acc+"  "+deacc);
         }else {
             up = false;
         }
@@ -122,7 +120,7 @@ public class Player extends  Entity{
         } else {
             right = false;
         }
-        if (key.attack.down) {
+        if (key.interact.down) {
             attack = true;
         } else {
             attack = false;
