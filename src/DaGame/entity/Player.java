@@ -1,6 +1,7 @@
 package DaGame.entity;
 
 import DaGame.graphics.Sprite;
+import DaGame.states.PlayState;
 import DaGame.util.KeyHandler;
 import DaGame.util.MouseHandler;
 import DaGame.util.Vector2f;
@@ -72,13 +73,15 @@ public class Player extends  Entity{
     public void update(){
         super.update();
         move();
+        PlayState.map.x += dx;
+        PlayState.map.y += dy;
         pos.x += dx;
         pos.y += dy;
     }
 
     @Override
     public void render(Graphics2D g) {
-        g.drawImage(ani.getImage(), (int) (pos.x), (int) (pos.y), size, size, null );
+        g.drawImage(ani.getImage(), (int) (pos.getWorldVar().x), (int) (pos.getWorldVar().y), size, size, null );
     }
 
 

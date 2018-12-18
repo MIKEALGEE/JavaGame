@@ -12,6 +12,8 @@ public class GamePanel extends JPanel implements Runnable {
 
     public static int width;
     public static int height;
+    public static int oldFrameCount;
+    public static String charSpeech;
 
     private Thread thread;
     private Boolean running = false;
@@ -67,7 +69,7 @@ public class GamePanel extends JPanel implements Runnable {
 
         int frameCount = 0;
         int lastSecondtime = (int) (lastUpdateTime / 1000000000);
-        int oldFrameCount = 0;
+        oldFrameCount = 0;
 
         while (running){
 
@@ -119,6 +121,7 @@ public class GamePanel extends JPanel implements Runnable {
 
     public void input(MouseHandler mouse, KeyHandler key){
         gsm.input(mouse,key);
+        charSpeech = "Hello this is a test";
     }
 
 
