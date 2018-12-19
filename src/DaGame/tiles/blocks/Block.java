@@ -5,7 +5,6 @@ import java.awt.image.BufferedImage;
 
 import DaGame.util.Vector2f;
 import DaGame.util.AABB;
-
 public abstract class Block {
     protected int w;
     protected int h;

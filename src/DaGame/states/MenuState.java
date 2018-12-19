@@ -1,5 +1,7 @@
 package DaGame.states;
 
+import DaGame.states.GameState;
+import DaGame.states.GameStateManager;
 import DaGame.util.KeyHandler;
 import DaGame.util.MouseHandler;
 
@@ -11,7 +13,7 @@ public class MenuState extends GameState {
     }
 
     @Override
-    public void update() {
+    public void update(double time) {
 
     }
 

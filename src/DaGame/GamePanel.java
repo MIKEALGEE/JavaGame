@@ -1,49 +1,59 @@
 package DaGame;
 
-import DaGame.states.GameStateManager;
-import DaGame.util.KeyHandler;
-import DaGame.util.MouseHandler;
-
-import javax.swing.*;
-import java.awt.*;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 
+import javax.swing.JPanel;
+
+import DaGame.states.GameStateManager;
+import DaGame.util.MouseHandler;
+import DaGame.util.KeyHandler;
+
+
 public class GamePanel extends JPanel implements Runnable {
+
+    public static final long serialVersionUID = 1L;
 
     public static int width;
     public static int height;
     public static int oldFrameCount;
-    public static String charSpeech;
+    public static int oldTickCount;
 
     private Thread thread;
-    private Boolean running = false;
+    private boolean running = false;
+
     private BufferedImage img;
     private Graphics2D g;
+
     private MouseHandler mouse;
     private KeyHandler key;
+
     private GameStateManager gsm;
 
-    public GamePanel(int width, int height){
-        this.width = width;
-        this.height = height;
-        setPreferredSize(new Dimension(width,height));
+    public GamePanel(int width, int height) {
+        GamePanel.width = width;
+        GamePanel.height = height;
+        setPreferredSize(new Dimension(width, height));
         setFocusable(true);
         requestFocus();
     }
 
-    public void addNotify(){
+    public void addNotify() {
         super.addNotify();
 
-        if (thread == null){
-            thread = new Thread(this,"GameThread");
+        if (thread == null) {
+            thread = new Thread(this, "GameThread");
             thread.start();
         }
     }
 
-    public void init(){
+    public void init() {
         running = true;
 
-        img = new BufferedImage(width,height, BufferedImage.TYPE_INT_ARGB);
+        img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
         g = (Graphics2D) img.getGraphics();
 
         mouse = new MouseHandler(this);
@@ -52,91 +62,101 @@ public class GamePanel extends JPanel implements Runnable {
         gsm = new GameStateManager();
     }
 
-
-    public void run(){
+    public void run() {
         init();
 
-        final double GAME_HERTZ =60.0;
-        final double TBU =  1000000000 / GAME_HERTZ; // Time Before Update variable
+        final double GAME_HERTZ = 64.0;
+        final double TBU = 1000000000 / GAME_HERTZ; // Time Before Update
 
-        final int MUBR = 5; //Must update before render
+        final int MUBR = 3; // Must Update before render
 
         double lastUpdateTime = System.nanoTime();
         double lastRenderTime;
 
-        final double TARGET_FPS = 60;
-        final double TTBR = 1000000000 / TARGET_FPS; // Total time before Render variable
+        final double TARGET_FPS = 1000;
+        final double TTBR = 1000000000 / TARGET_FPS; // Total time before render
 
         int frameCount = 0;
-        int lastSecondtime = (int) (lastUpdateTime / 1000000000);
+        int lastSecondTime = (int) (lastUpdateTime / 1000000000);
         oldFrameCount = 0;
 
-        while (running){
+        int tickCount = 0;
+        oldTickCount = 0;
+
+        while (running) {
 
             double now = System.nanoTime();
-
             int updateCount = 0;
-
-            while(((now - lastUpdateTime) > TBU)&&(updateCount < MUBR)) {
-                update();
+            while (((now - lastUpdateTime) > TBU) && (updateCount < MUBR)) {
+                update(now);
                 input(mouse, key);
                 lastUpdateTime += TBU;
                 updateCount++;
+                tickCount++;
+                // (^^^^) We use this varible for the soul purpose of displaying it
             }
 
-            if(now - lastUpdateTime > TBU){
+            if (now - lastUpdateTime > TBU) {
                 lastUpdateTime = now - TBU;
             }
-            input(mouse,key);
+
+            input(mouse, key);
             render();
             draw();
             lastRenderTime = now;
             frameCount++;
 
             int thisSecond = (int) (lastUpdateTime / 1000000000);
-            if (thisSecond > lastSecondtime) {
-                if (frameCount != oldFrameCount){
-                    System.out.println("NEW SECOND" + thisSecond + " " + frameCount);
+            if (thisSecond > lastSecondTime) {
+                if (frameCount != oldFrameCount) {
+                    System.out.println("NEW SECOND " + thisSecond + " " + frameCount);
                     oldFrameCount = frameCount;
                 }
+
+                if (tickCount != oldTickCount) {
+                    System.out.println("NEW SECOND (T) " + thisSecond + " " + tickCount);
+                    oldTickCount = tickCount;
+                }
+                tickCount = 0;
                 frameCount = 0;
-                lastSecondtime = thisSecond;
+                lastSecondTime = thisSecond;
             }
-            while(now - lastRenderTime < TTBR && now - lastUpdateTime < TBU){
+
+            while (now - lastRenderTime < TTBR && now - lastUpdateTime < TBU) {
                 Thread.yield();
 
                 try {
                     Thread.sleep(1);
-                }catch(Exception e){
-                    System.out.println("ERROR: yeilding thread");
+                } catch (Exception e) {
+                    System.out.println("ERROR: yielding thread");
                 }
+
                 now = System.nanoTime();
             }
+
         }
     }
 
-    public void update(){
-        gsm.update();
+    public void update(double time) {
+        gsm.update(time);
     }
 
-    public void input(MouseHandler mouse, KeyHandler key){
-        gsm.input(mouse,key);
-        charSpeech = "Hello this is a test";
+    public void input(MouseHandler mouse, KeyHandler key) {
+        gsm.input(mouse, key);
     }
 
-
-    public void render(){
-        if (g != null){
-            g.setColor(new Color(66,134,244));
-            g.fillRect(0,0,width,height);
+    public void render() {
+        if (g != null) {
+            g.setColor(new Color(33, 30, 39));
+            g.fillRect(0, 0, width, height);
             gsm.render(g);
         }
     }
 
-    public void draw(){
+    public void draw() {
         Graphics g2 = (Graphics) this.getGraphics();
-        g2.drawImage(img,0,0,width,height,null);
+        g2.drawImage(img, 0, 0, width, height, null);
         g2.dispose();
-
     }
+
 }

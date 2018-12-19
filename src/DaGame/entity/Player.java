@@ -3,15 +3,22 @@ package DaGame.entity;
 import DaGame.GamePanel;
 import DaGame.graphics.Sprite;
 import DaGame.states.PlayState;
+import DaGame.util.Camera;
 import DaGame.util.KeyHandler;
 import DaGame.util.MouseHandler;
 import DaGame.util.Vector2f;
 
 import java.awt.*;
 
+
+
 public class Player extends  Entity{
-    public Player(Sprite sprite, Vector2f origin, int size) {
+
+    private Camera cam;
+
+    public Player(Camera cam, Sprite sprite, Vector2f origin, int size) {
         super(sprite, origin, size);
+        this.cam =cam;
         acc =3f;
         maxSpeed =4f;
         bounds.setWidth(90);
@@ -86,7 +93,7 @@ public class Player extends  Entity{
         setAnimation(RIGHT, sprite.getSpriteArray(RIGHT), 10);
     }
 
-    public void update(Npc npc) {
+    public void update(Npc npc, double time) {
         super.update();
 
         if(interact && hitBounds.collides(npc.getBounds())){
@@ -122,13 +129,13 @@ public class Player extends  Entity{
     }
     @Override
     public void render(Graphics2D g) {
-        g.setColor(Color.blue);
-        g.drawRect((int) (pos.getWorldVar().x + bounds.getXOffset()), (int) (pos.getWorldVar().y + bounds.getYOffset()),(int) bounds.getWidth(),(int)bounds.getHeight());
+//        g.setColor(Color.blue);
+//        g.drawRect((int) (pos.getWorldVar().x + bounds.getXOffset()), (int) (pos.getWorldVar().y + bounds.getYOffset()),(int) bounds.getWidth(),(int)bounds.getHeight());
         g.drawImage(ani.getImage(), (int) (pos.getWorldVar().x), (int) (pos.getWorldVar().y), size, size, null );
 
         if(interact){
-            g.setColor(Color.red);
-            g.drawRect((int)(hitBounds.getPos().getWorldVar().x + hitBounds.getXOffset()), (int)(hitBounds.getPos().getWorldVar().y + hitBounds.getYOffset()),(int)hitBounds.getWidth(),(int)hitBounds.getHeight());
+//            g.setColor(Color.red);
+//            g.drawRect((int)(hitBounds.getPos().getWorldVar().x + hitBounds.getXOffset()), (int)(hitBounds.getPos().getWorldVar().y + hitBounds.getYOffset()),(int)hitBounds.getWidth(),(int)hitBounds.getHeight());
 
         }
 

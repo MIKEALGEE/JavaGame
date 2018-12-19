@@ -21,11 +21,9 @@ public class TileMapObj extends TileMap {
     public static int width;
     public static int height;
 
-
     public TileMapObj(String data, Sprite sprite, int width, int height, int tileWidth, int tileHeight, int tileColumns) {
         Block tempBlock;
         event_blocks = new Block[width * height];
-
 
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;
@@ -48,13 +46,13 @@ public class TileMapObj extends TileMap {
     }
 
     public void render(Graphics2D g, AABB cam) {
-    int x = (int) ((cam.getPos().getCamVar().x) / tileWidth);
-    int y = (int) ((cam.getPos().getCamVar().y) / tileHeight);
-    for(int i = x;i < x + (cam.getWidth() / tileWidth); i++){
-        for (int j = y; j < y + (cam.getHeight() / tileHeight); j++){
-            if(event_blocks[i +(j *height)] != null)
-                event_blocks[i + (j * height)].render(g);
+        int x = (int) ((cam.getPos().x) / tileWidth);
+        int y = (int) ((cam.getPos().y) / tileHeight);
+        for(int i = x; i < x + (cam.getWidth() / tileWidth); i++) {
+            for(int j = y; j < y + (cam.getHeight() / tileHeight); j++) {
+                if(event_blocks[i + (j * height)] != null)
+                    event_blocks[i + (j * height)].render(g);
+            }
         }
     }
-    }
-    }
+}

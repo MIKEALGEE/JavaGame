@@ -87,36 +87,36 @@ public class Npc extends Entity {
 
 
     public void update(Player player){
-        if(cam.getBoundsOnScreen().collides(this.bounds)){
-
+        if(cam.getBounds().collides(this.bounds)) {
             super.update();
-            move(player); //uncomment this for the follow around.
-            if(!tc.collisionTile(dx,0)) {
-                sense.getPos().x += dx;
-                pos.x += dx;
+            move(player);
+            if (!fallen) {
+                if (!tc.collisionTile(dx, 0)) {
+                    sense.getPos().x += dx;
+                    pos.x += dx;
+                }
+                if (!tc.collisionTile(0, dy)) {
+                    sense.getPos().y += dy;
+                    pos.y += dy;
+                }
             }
-            if(!tc.collisionTile(dx,0)){
-                sense.getPos().y += dy;
-                pos.y += dy;
-            }
-
         }
-
     }
+
 
     @Override
-    public void render(Graphics2D g){
-        if(cam.getBoundsOnScreen().collides(this.bounds)){
-            g.setColor(Color.green);
-            g.drawRect((int) (pos.getWorldVar().x + bounds.getXOffset()), (int) (pos.getWorldVar().y + bounds.getYOffset()),
-                    (int) bounds.getWidth(), (int) bounds.getHeight());
+    public void render(Graphics2D g) {
+        if(cam.getBounds().collides(this.bounds)) {
+//            g.setColor(Color.green);
+//            g.drawRect((int) (pos.getWorldVar().x + bounds.getXOffset()), (int) (pos.getWorldVar().y + bounds.getYOffset()),
+//                    (int) bounds.getWidth(), (int) bounds.getHeight());
 
-            g.setColor(Color.blue);
-            g.drawOval((int) (sense.getPos().getWorldVar().x), (int) (sense.getPos().getWorldVar().y), r, r);
+//            g.setColor(Color.blue);
+//            g.drawOval((int) (sense.getPos().getWorldVar().x), (int) (sense.getPos().getWorldVar().y), r, r);
 
-            g.drawImage(ani.getImage(), (int) (pos.getWorldVar().x), (int) (pos.getWorldVar().y), size, size, null );
+            g.drawImage(ani.getImage(), (int) (pos.getWorldVar().x), (int) (pos.getWorldVar().y), size, size, null);
         }
-
     }
+
 
 }

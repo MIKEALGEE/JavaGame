@@ -18,8 +18,6 @@ public class TileManager {
     public static ArrayList<TileMap> tm;
     public Camera cam;
 
-
-
     public TileManager() {
         tm = new ArrayList<TileMap>();
     }
@@ -31,12 +29,11 @@ public class TileManager {
 
     public TileManager(String path, int blockWidth, int blockHeight, Camera cam) {
         tm = new ArrayList<TileMap>();
-        this.cam = cam;
         addTileMap(path, blockWidth, blockHeight, cam);
     }
 
     private void addTileMap(String path, int blockWidth, int blockHeight, Camera cam) {
-       this.cam = cam;
+        this.cam = cam;
         String imagePath;
 
         int width = 0;
@@ -86,7 +83,7 @@ public class TileManager {
                     tm.add(new TileMapObj(data[i], sprite, width, height, blockWidth, blockHeight, tileColumns));
                 }
 
-                cam.setLimit(width + blockWidth, height + blockHeight);
+                cam.setLimit(width * blockWidth, height * blockHeight);
 
             }
         } catch(Exception e) {

@@ -24,19 +24,23 @@ public class GameStateManager {
     public int onTopState = 0;
 
     public static Font font;
+    public static Sprite ui;
 
-    public GameStateManager(){
+    public GameStateManager() {
         map = new Vector2f(GamePanel.width, GamePanel.height);
-        Vector2f.setWorldVar(map.x,map.y);
+        Vector2f.setWorldVar(map.x, map.y);
+
         states = new GameState[4];
 
-        font = new Font("font/ZeldaFont.png", 10,10);
+        font = new Font("font/font.png", 10, 10);
         Sprite.currentFont = font;
+
+        ui = new Sprite("ui/ui.png", 64, 64);
 
         states[PLAY] = new PlayState(this);
     }
 
-    public boolean getState(int state){
+    public boolean getState(int state) {
         return states[state] != null;
     }
 
@@ -44,55 +48,56 @@ public class GameStateManager {
         states[state] = null;
     }
 
-    public void add(int state){
-        if(states[state] != null)
+    public void add(int state) {
+        if (states[state] != null)
             return;
-        if (state == PLAY){
+
+        if (state == PLAY) {
             states[PLAY] = new PlayState(this);
         }
-        if (state ==MENU){
+        if (state == MENU) {
             states[MENU] = new MenuState(this);
         }
-        if (state == PAUSE){
+        if (state == PAUSE) {
             states[PAUSE] = new PauseState(this);
         }
-        if (state == SPEECH){
+        if (state == SPEECH) {
             states[SPEECH] = new SpeechState(this);
         }
     }
 
-    public void addAndpop(int state ){
+    public void addAndpop(int state) {
         addAndpop(state, 0);
     }
 
-    public void addAndpop(int state, int remove){
+    public void addAndpop(int state, int remove) {
         pop(state);
         add(state);
     }
 
-    public void update(){
+    public void update(double time) {
         for (int i = 0; i < states.length; i++) {
             if (states[i] != null) {
-                states[i].update();
-            }
-            }
-        }
-
-    public void input(MouseHandler mouse, KeyHandler key){
-        key.escape.tick();
-        for (int i = 0; i < states.length; i++) {
-            if (states[i] != null) {
-                states[i].input(mouse,key);
+                states[i].update(time);
             }
         }
-
     }
 
-    public void render(Graphics2D g){
+    public void input(MouseHandler mouse, KeyHandler key) {
+
+        for (int i = 0; i < states.length; i++) {
+            if (states[i] != null) {
+                states[i].input(mouse, key);
+            }
+        }
+    }
+
+    public void render(Graphics2D g) {
         for (int i = 0; i < states.length; i++) {
             if (states[i] != null) {
                 states[i].render(g);
             }
         }
-        }
     }
+
+}
