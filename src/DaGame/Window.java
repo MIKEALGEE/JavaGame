@@ -10,6 +10,7 @@ public class Window extends JFrame {
         setTitle("Test Game");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(new GamePanel(1280,720));
+        setIgnoreRepaint(true);
         pack();
         setLocationRelativeTo(null);
         setVisible(true);

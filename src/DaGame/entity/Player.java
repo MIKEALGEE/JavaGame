@@ -86,22 +86,37 @@ public class Player extends  Entity{
         setAnimation(RIGHT, sprite.getSpriteArray(RIGHT), 10);
     }
 
-    public void update() {
+    public void update(Npc npc) {
         super.update();
+
+        if(interact && hitBounds.collides(npc.getBounds())){
+            System.out.println("I SHOULD SPEAK NOW");
+        }
+
         if(!fallen){
             move();
             if (!tc.collisionTile(dx, 0)) {
-                PlayState.map.x += dx;
+//                PlayState.map.x += dx;
                 pos.x += dx;
+                xCol = false;
+            } else {
+                xCol = true;
             }
             if (!tc.collisionTile(0, dy)) {
-                PlayState.map.y += dy;
+//                PlayState.map.y += dy;
                 pos.y += dy;
-
+                yCol = false;
+            } else {
+                yCol = true;
             }
         } else {
+            xCol = true;
+            yCol = true;
             if(ani.hasPlayedOnce()){
                 resetPosition();
+                dx =0;
+                dy =0;
+                fallen = false;
             }
         }
     }
@@ -110,6 +125,13 @@ public class Player extends  Entity{
         g.setColor(Color.blue);
         g.drawRect((int) (pos.getWorldVar().x + bounds.getXOffset()), (int) (pos.getWorldVar().y + bounds.getYOffset()),(int) bounds.getWidth(),(int)bounds.getHeight());
         g.drawImage(ani.getImage(), (int) (pos.getWorldVar().x), (int) (pos.getWorldVar().y), size, size, null );
+
+        if(interact){
+            g.setColor(Color.red);
+            g.drawRect((int)(hitBounds.getPos().getWorldVar().x + hitBounds.getXOffset()), (int)(hitBounds.getPos().getWorldVar().y + hitBounds.getYOffset()),(int)hitBounds.getWidth(),(int)hitBounds.getHeight());
+
+        }
+
     }
 
 
@@ -139,10 +161,18 @@ public class Player extends  Entity{
                 right = false;
             }
             if (key.interact.down) {
-                attack = true;
+                interact = true;
             } else {
-                attack = false;
+                interact = false;
             }
+            if(up && down){
+                up = false;
+                down = false;}
+
+                if(right && left ){
+                    right = false;
+                    left = false;
+                }
         } else {
             up =false;
             down = false;

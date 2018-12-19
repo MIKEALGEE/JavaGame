@@ -29,6 +29,9 @@ public abstract class Entity {
     protected boolean attack;
     protected boolean fallen;
     protected boolean interact;
+
+    public boolean xCol = false;
+    public boolean yCol = false;
     protected int attackSpeed;
     protected int attackDuration;
 
@@ -53,7 +56,7 @@ public abstract class Entity {
         this.size =size;
 
         bounds = new AABB(origin, size, size);
-        hitBounds = new AABB(new Vector2f(origin.x +(size / 2), origin.y),size, size);
+        hitBounds = new AABB(origin,size,size);
         hitBounds.setXOffset(size / 2);
         ani = new Animation();
         setAnimation(RIGHT,sprite.getSpriteArray(RIGHT), 10);
@@ -70,19 +73,15 @@ public abstract class Entity {
     public void setSprite(Sprite sprite){
         this.sprite = sprite;
     }
-
-
     public void setFallen(boolean b){ interact = b;}
-
-    public void setSize(int i){
-        size = i; }
-
-    public void setMaxSpeed(float f){
-        maxSpeed = f; }
-    public void setAcc(float f){
-        acc = f; }
-    public void setDeAcc(float f){
-        deacc = f; }
+    public void setSize(int i){ size = i; }
+    public void setMaxSpeed(float f){ maxSpeed = f; }
+    public void setAcc(float f){ acc = f; }
+    public void setDeAcc(float f){ deacc = f; }
+    public float getDeacc(){ return deacc; }
+    public float getMaxSpeed(){ return maxSpeed; }
+    public float getDx(){return dx;}
+    public float getDy(){return dy;}
 
     public AABB getBounds(){
         return bounds;
@@ -93,8 +92,6 @@ public abstract class Entity {
     }
 
     public Animation getAnimation() {return ani;}
-
-
 
     public void update(){
         animate();
@@ -142,18 +139,18 @@ public abstract class Entity {
     public void setHitBoxDirection(){
         if(up) {
             hitBounds.setYOffset(-size / 2);
-            hitBounds.setXOffset(-size / 2);
+            hitBounds.setXOffset(0);
         }
         else if(down) {
             hitBounds.setYOffset(size / 2);
-            hitBounds.setXOffset(-size / 2);
+            hitBounds.setXOffset(0);
         }
         else if(left) {
-            hitBounds.setXOffset(-size);
+            hitBounds.setXOffset(-size / 2);
             hitBounds.setYOffset(0);
         }
         else if(right) {
-            hitBounds.setXOffset(0);
+            hitBounds.setXOffset(size / 2);
             hitBounds.setYOffset(0);
         }
     }

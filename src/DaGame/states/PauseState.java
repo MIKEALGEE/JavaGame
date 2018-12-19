@@ -5,6 +5,8 @@ import DaGame.util.MouseHandler;
 
 import java.awt.*;
 
+import static DaGame.states.GameStateManager.PAUSE;
+
 public class PauseState extends GameState {
     public PauseState(GameStateManager gsm) {
         super(gsm);
@@ -12,7 +14,7 @@ public class PauseState extends GameState {
 
     @Override
     public void update() {
-
+    System.out.println("PAUSED");
     }
 
     @Override

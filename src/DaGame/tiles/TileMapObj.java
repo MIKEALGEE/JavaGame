@@ -13,7 +13,7 @@ import DaGame.tiles.blocks.ObjBlock;
 
 public class TileMapObj extends TileMap {
 
-    public static HashMap<String, Block> tmo_blocks;
+    public static Block[] event_blocks;
 
     private int tileWidth;
     private int tileHeight;
@@ -21,9 +21,11 @@ public class TileMapObj extends TileMap {
     public static int width;
     public static int height;
 
+
     public TileMapObj(String data, Sprite sprite, int width, int height, int tileWidth, int tileHeight, int tileColumns) {
         Block tempBlock;
-        tmo_blocks = new HashMap<String, Block>();
+        event_blocks = new Block[width * height];
+
 
         this.tileWidth = tileWidth;
         this.tileHeight = tileHeight;
@@ -40,15 +42,19 @@ public class TileMapObj extends TileMap {
                 } else {
                     tempBlock = new ObjBlock(sprite.getSprite((int) ((temp - 1) % tileColumns), (int) ((temp - 1) / tileColumns) ),new Vector2f((int) (i % width) * tileWidth, (int) (i / height) * tileHeight), tileWidth, tileHeight);
                 }
-               tmo_blocks.put(String.valueOf((int)(i % width)) + "," + String.valueOf((int)(i /height)), tempBlock);
+                event_blocks[i] = tempBlock;
             }
         }
     }
 
-    public void render(Graphics2D g) {
-        for ( Block block: tmo_blocks.values()){
-            block.render(g);
+    public void render(Graphics2D g, AABB cam) {
+    int x = (int) ((cam.getPos().getCamVar().x) / tileWidth);
+    int y = (int) ((cam.getPos().getCamVar().y) / tileHeight);
+    for(int i = x;i < x + (cam.getWidth() / tileWidth); i++){
+        for (int j = y; j < y + (cam.getHeight() / tileHeight); j++){
+            if(event_blocks[i +(j *height)] != null)
+                event_blocks[i + (j * height)].render(g);
         }
-
-        }
+    }
+    }
     }

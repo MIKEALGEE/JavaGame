@@ -1,6 +1,7 @@
 package DaGame.tiles;
 
 import DaGame.graphics.Sprite;
+import DaGame.util.Camera;
 import DaGame.util.Vector2f;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
@@ -15,23 +16,27 @@ import java.io.File;
 public class TileManager {
 
     public static ArrayList<TileMap> tm;
+    public Camera cam;
+
 
 
     public TileManager() {
         tm = new ArrayList<TileMap>();
     }
 
-    public TileManager(String path) {
+    public TileManager(String path, Camera cam) {
         tm = new ArrayList<TileMap>();
-        addTileMap(path, 64, 64);
+        addTileMap(path, 64, 64, cam);
     }
 
-    public TileManager(String path, int blockWidth, int blockHeight) {
+    public TileManager(String path, int blockWidth, int blockHeight, Camera cam) {
         tm = new ArrayList<TileMap>();
-        addTileMap(path, blockWidth, blockHeight);
+        this.cam = cam;
+        addTileMap(path, blockWidth, blockHeight, cam);
     }
 
-    private void addTileMap(String path, int blockWidth, int blockHeight) {
+    private void addTileMap(String path, int blockWidth, int blockHeight, Camera cam) {
+       this.cam = cam;
         String imagePath;
 
         int width = 0;
@@ -81,6 +86,7 @@ public class TileManager {
                     tm.add(new TileMapObj(data[i], sprite, width, height, blockWidth, blockHeight, tileColumns));
                 }
 
+                cam.setLimit(width + blockWidth, height + blockHeight);
 
             }
         } catch(Exception e) {
@@ -89,8 +95,12 @@ public class TileManager {
     }
 
     public void render(Graphics2D g) {
+        if(cam == null)
+            return;
+
         for(int i = 0; i < tm.size(); i++) {
-            tm.get(i).render(g);
+            tm.get(i).render(g, cam.getBounds());
         }
     }
 }
+

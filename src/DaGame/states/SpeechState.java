@@ -5,8 +5,8 @@ import DaGame.util.MouseHandler;
 
 import java.awt.*;
 
-public class GameOverState extends GameState {
-    public GameOverState(GameStateManager gsm) {
+public class SpeechState extends GameState {
+    public SpeechState(GameStateManager gsm) {
         super(gsm);
     }
 
