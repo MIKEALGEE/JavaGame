@@ -35,10 +35,10 @@ public class PlayState extends GameState {
 
         cam = new Camera(new AABB(new Vector2f(0, 0), GamePanel.width + 64, GamePanel.height + 64));
 
-        tm = new TileManager("tile/tilemap.xml", cam);
+        tm = new TileManager("tile/gamemap.xml",64,64 ,cam);
 
 
-        npc = new Npc(cam, new Sprite("entity/linkFormatted.png"), new Vector2f(0 + (GamePanel.width / 2) - 32 + 150, 0 + (GamePanel.height / 2) - 32 + 150), 120);
+        npc = new Npc(cam, new Sprite("entity/dog.png"), new Vector2f(0 + (GamePanel.width / 2) - 32 + 150, 0 + (GamePanel.height / 2) - 32 + 150), 65);
         player = new Player(cam, new Sprite("entity/MainCharJava.png"), new Vector2f(0 + (GamePanel.width / 2) - 32, 0 + (GamePanel.height / 2) - 32), 120);
         cam.target(player);
     }

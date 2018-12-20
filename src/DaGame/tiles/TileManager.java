@@ -45,6 +45,7 @@ public class TileManager {
         int layers = 0;
         Sprite sprite;
 
+
         String[] data = new String[10];
 
         try {
@@ -58,11 +59,13 @@ public class TileManager {
             Element eElement = (Element) node;
 
             imagePath = eElement.getAttribute("name");
+//            imagePath = eElement.getAttribute("image");
             tileWidth = Integer.parseInt(eElement.getAttribute("tilewidth"));
             tileHeight = Integer.parseInt(eElement.getAttribute("tileheight"));
             tileCount = Integer.parseInt(eElement.getAttribute("tilecount"));
             tileColumns =  Integer.parseInt(eElement.getAttribute("columns"));
             sprite = new Sprite("tile/" + imagePath + ".png", tileWidth, tileHeight);
+//            sprite = new Sprite("tile/" + imagePath , tileWidth, tileHeight);
 
             list = doc.getElementsByTagName("layer");
             layers = list.getLength();
@@ -79,6 +82,7 @@ public class TileManager {
 
                 if(i >= 1) {
                     tm.add(new TileMapNorm(data[i], sprite, width, height, blockWidth, blockHeight, tileColumns));
+
                 } else {
                     tm.add(new TileMapObj(data[i], sprite, width, height, blockWidth, blockHeight, tileColumns));
                 }
@@ -88,6 +92,7 @@ public class TileManager {
             }
         } catch(Exception e) {
             System.out.println("ERROR - TILEMANAGER: can not read tilemap");
+            System.out.println(e + "," + height);
         }
     }
 

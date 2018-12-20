@@ -36,6 +36,7 @@ public class GamePanel extends JPanel implements Runnable {
     public GamePanel(int width, int height) {
         GamePanel.width = width;
         GamePanel.height = height;
+        setBackground(Color.blue);
         setPreferredSize(new Dimension(width, height));
         setFocusable(true);
         requestFocus();

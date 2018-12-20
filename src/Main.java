@@ -14,6 +14,7 @@ public class Main extends Application  {
             Media media = new Media(path);
             MediaPlayer mp = new MediaPlayer(media);
             mp.play();
+            mp.play();
 
             System.out.println("Playing...");
         }
